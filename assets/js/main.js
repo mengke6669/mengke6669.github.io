@@ -1,47 +1,75 @@
 "use strict";
 
 
-jQuery(document).ready(function ($) {
+jQuery(document).ready(function($) {
 
-    jQuery(window).load(function () {
+    jQuery(window).load(function() {
         jQuery(".loaded").fadeOut();
         jQuery(".preloader").delay(1000).fadeOut("slow");
     });
     /*---------------------------------------------*
      * Mobile menu
      ---------------------------------------------*/
-//    jQuery('.navbar-collapse').find('a[href*=#]:not([href=#])').click(function () {
-//        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-//            var target = $(this.hash);
-//            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-//            if (target.length) {
-//                $('html,body').animate({
-//                    scrollTop: (target.offset().top - 40)
-//                }, 1000);
-//                if ($('.navbar-toggle').css('display') != 'none') {
-//                    $(this).parents('.container').find(".navbar-toggle").trigger("click");
-//                }
-//                return false;
-//            }
-//        }
-//    });
+    //    jQuery('.navbar-collapse').find('a[href*=#]:not([href=#])').click(function () {
+    //        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+    //            var target = $(this.hash);
+    //            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+    //            if (target.length) {
+    //                $('html,body').animate({
+    //                    scrollTop: (target.offset().top - 40)
+    //                }, 1000);
+    //                if ($('.navbar-toggle').css('display') != 'none') {
+    //                    $(this).parents('.container').find(".navbar-toggle").trigger("click");
+    //                }
+    //                return false;
+    //            }
+    //        }
+    //    });
+
+    /*---------------------------------------------*
+     * 搬移過來的owlCarousel
+     ---------------------------------------------*/
+
+    var owl = $("#header-slider");
+    owl.owlCarousel({
+        singleItem: true,
+        navigation: true,
+        navigationText: ["<i class='ion-ios-arrow-thin-left'></i>", "<i class='ion-ios-arrow-thin-right'></i>"],
+        transitionStyle: "fade",
+        pagination: true,
+    });
 
 
+    $("#Client_Logo").owlCarousel({
+        responsiveClass: true,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        autoplayTimeout: 300,
+        items: 6,
+        loop: true,
+        dots: false,
+        nav: false,
+        navText: [
+            "<i class='lnr lnr-chevron-left'></i>",
+            "<i class='lnr lnr-chevron-right'></i>"
+        ],
+        autoplayHoverPause: true
+    });
 
     /*---------------------------------------------*
      * STICKY scroll
      ---------------------------------------------*/
 
-//    jQuery(".main-nav").localScroll();
+    //    jQuery(".main-nav").localScroll();
 
     $('.body').scrollSpy();
 
-//    $('.button-collapse').sideNav({
-//        menuWidth: 250, // Default is 240
-//        edge: 'right', // Choose the horizontal origin
-//        closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
-//    }
-//    );
+    //    $('.button-collapse').sideNav({
+    //        menuWidth: 250, // Default is 240
+    //        edge: 'right', // Choose the horizontal origin
+    //        closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+    //    }
+    //    );
 
     jQuery(".dropdown-button").dropdown({
         inDuration: 300,
@@ -59,7 +87,7 @@ jQuery(document).ready(function ($) {
      * STICKY scroll
      ---------------------------------------------*/
 
-//    $('').localScroll();
+    //    $('').localScroll();
 
     /*---------------------------------------------*
      * WOW
@@ -76,7 +104,7 @@ jQuery(document).ready(function ($) {
 
     $('.test_slider').owlCarousel({
         responsiveClass: true,
-        autoplay: false,
+        autoplay: true,
         items: 1,
         loop: true,
         dots: false,
@@ -90,17 +118,17 @@ jQuery(document).ready(function ($) {
     });
 
 
-// scroll Up
+    // scroll Up
 
-    jQuery(window).scroll(function () {
+    jQuery(window).scroll(function() {
         if ($(this).scrollTop() > 600) {
             $('.scrollup').fadeIn('slow');
         } else {
             $('.scrollup').fadeOut('slow');
         }
     });
-    jQuery('.scrollup').click(function () {
-        $("html, body").animate({scrollTop: 0}, 1000);
+    jQuery('.scrollup').click(function() {
+        $("html, body").animate({ scrollTop: 0 }, 1000);
         return false;
     });
 
@@ -118,14 +146,14 @@ jQuery(document).ready(function ($) {
      * Menu Section
      ---------------------------------------------*/
 
-    $('.cd-menu-trigger').on('click', function (event) {
+    $('.cd-menu-trigger').on('click', function(event) {
         event.preventDefault();
         $('.home-main-content').addClass('move-out');
         $('#main-nav').addClass('is-visible');
         $('.cd-shadow-layer').addClass('is-visible');
     });
     //close menu
-    $('.cd-close-menu').on('click', function (event) {
+    $('.cd-close-menu').on('click', function(event) {
         event.preventDefault();
         $('.home-main-content').removeClass('move-out');
         $('#main-nav').removeClass('is-visible');
@@ -134,37 +162,36 @@ jQuery(document).ready(function ($) {
 
     //clipped image - blur effect
     set_clip_property();
-    $(window).on('resize', function () {
+    $(window).on('resize', function() {
         set_clip_property();
     });
 
     function set_clip_property() {
         var $header_height = $('.cd-header').height(),
-                $window_height = $(window).height(),
-                $header_top = $window_height - $header_height,
-                $window_width = $(window).width();
+            $window_height = $(window).height(),
+            $header_top = $window_height - $header_height,
+            $window_width = $(window).width();
         $('.cd-blurred-bg').css('clip', 'rect(' + $header_top + 'px, ' + $window_width + 'px, ' + $window_height + 'px, 0px)');
     }
-    $('#main-nav a[href^="#"]').on('click', function (event) {
+    $('#main-nav a[href^="#"]').on('click', function(event) {
         event.preventDefault();
         var target = $(this.hash);
         $('.home-main-content').removeClass('move-out');
         $('#main-nav').removeClass('is-visible');
         $('.cd-shadow-layer').removeClass('is-visible');
-        $('body,html').animate(
-                {'scrollTop': target.offset().top},
-                900
-                );
+        $('body,html').animate({ 'scrollTop': target.offset().top },
+            900
+        );
     });
-    
-    
-// scrolldown icon
-$('.scrolldown a').bind('click', function () {
-    $('html , body').stop().animate({
-        scrollTop: $($(this).attr('href')).offset().top - 160
-    }, 1500, 'easeInOutExpo');
-    event.preventDefault();
-});
+
+
+    // scrolldown icon
+    $('.scrolldown a').bind('click', function() {
+        $('html , body').stop().animate({
+            scrollTop: $($(this).attr('href')).offset().top - 160
+        }, 1500, 'easeInOutExpo');
+        event.preventDefault();
+    });
 
 
 
@@ -176,7 +203,7 @@ $('.scrolldown a').bind('click', function () {
 
 
 
-jQuery(document).on("scroll", function () {
+jQuery(document).on("scroll", function() {
     if ($(document).scrollTop() > 120) {
         $("header").addClass("small");
     } else {
@@ -184,9 +211,8 @@ jQuery(document).on("scroll", function () {
     }
 });
 
-jQuery(document).on('click', '.navbar-collapse.in', function (e) {
+jQuery(document).on('click', '.navbar-collapse.in', function(e) {
     if ($(e.target).is('a')) {
         $(this).collapse('hide');
     }
 });
-
