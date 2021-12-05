@@ -1,34 +1,35 @@
------------------------
-# README
------------------------
-Browny is a one page bootstrap 3 based resume/portfolio template.
+== Theme Name: Exigo - FREE HTML5 Creative Portfolio Template
+
+== Copyright (c) 2016 BootstrapThemes.co
+
+== http://BootstrapThemes.co
 
 
-Template Info:
------------------------
-Name: 		Browny - Free Bootstrap One Page Portfolio Resume Tempalte
-Version: 	1.0
-Author: 	ThemeSINE
-Website: 	https://www.themesine.com/
+Html Created by: http://bootstrapthemes.co
 
 
-Changelog:
------------------------
-Version 1.0 14-05-2018
-- initial release 
+
+Psd Created by: --Shravan Hotha-- https://www.behance.net/gallery/37172261/Exigo-PSD-Freebie
 
 
-Credits:
------------------------
-- Twitter Bootstrap http://getbootstrap.com
-- jQuery http://jquery.org
-- Modernizr https://modernizr.com/
-- Sticky.js http://stickyjs.com/
-- JQuery easing https://github.com/gdsmith/jquery.easing
-- Bootsnav http://bootsnav.danurstrap.com/
-- Pexels https://www.pexels.com/
-- Unsplash https://unsplash.com/
+Rights: 
+You are permitted to use the resources for any number of personal and commercial projects.
+You may modify the resources according to your requirements and include them into works, 
+such as websites, applications or other materials intended for sale. No attribution or 
+link back to this site is required, however any credit will be much appreciated.
 
-License:
------------------------
-This template is under Free License - https://www.themesine.com/license/
+
+Prohibitions:
+You do not have the rights to redistribute, resell, lease, license, sublicense or offer 
+files downloaded from http://bootstrapthemes.co to any third party ìas isî or as a separate attachment 
+from any of your work. If you wish to promote my resources on your site, you must link back 
+to the resource page where users can find the download and not directly to the download file.
+
+
+
+If you would like to share one of my resources, you can do so by making a link to the specific 
+resource on http://bootstrapthemes.co , you can if you wish insert the embed code for the product previews images to illustrate your link. 
+No HOTLINKING is allowed i.e. you cannot make a direct link to the download or/and the images hosted on http://bootstrapthemes.co
+
+Concerning blog posts, you are free to link to it from any website, 
+but you cannot however publish it as it is, without prior consent from http://bootstrapthemes.co
