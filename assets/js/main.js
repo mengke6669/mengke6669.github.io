@@ -53,7 +53,21 @@ jQuery(document).ready(function($) {
             "<i class='lnr lnr-chevron-left'></i>",
             "<i class='lnr lnr-chevron-right'></i>"
         ],
-        autoplayHoverPause: true
+        autoplayHoverPause: true,
+        responsive: {
+            0: {
+                items: 2
+            },
+            480: {
+                items: 2
+            },
+            768: {
+                items: 6
+            },
+            1200: {
+                items: 6
+            }
+        }
     });
 
     /*---------------------------------------------*
